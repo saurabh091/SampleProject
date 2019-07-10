@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     }
     
     func getApiCall() {
-        Alamofire.request(BaseURl2).validate().responseJSON { response in
+        Alamofire.request(BaseURl).validate().responseJSON { response in
             switch response.result {
             case .success:
                 print("Validation Successful)")
