@@ -7,14 +7,16 @@
 //
 
 import Foundation
+import UIKit
 
 class Webservice {
-
+    
     static let sharedInstance = Webservice()
     private let placeURL = URL(string: JSON_Url)!
     
     func loadSources(completion :@escaping (Place) -> ()) {
-        URLSession.shared.dataTask(with: placeURL) { data, _, _ in
+        URLSession.shared.dataTask(with: placeURL) { data, _, error in
+            print(error!)
             if let data = data {
                 do {
                     let decoder = JSONDecoder()

@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        view.backgroundColor = .red
+        view.backgroundColor = .white
         setupUI()
     }
     
@@ -43,9 +43,10 @@ class ViewController: UIViewController {
         tableView.addRefreshControll(actionTarget: self, action: #selector(refreshPlaces))
         self.view.addSubview(tableView)
         
-        tableView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0.0).isActive = true
+        let margins = view.safeAreaLayoutGuide
+        tableView.leftAnchor.constraint(equalTo: margins.leftAnchor, constant: 0.0).isActive = true
         tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0.0).isActive = true
-        tableView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0.0).isActive = true
+        tableView.rightAnchor.constraint(equalTo: margins.rightAnchor, constant: 0.0).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0.0).isActive = true
     }
     
