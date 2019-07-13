@@ -20,12 +20,12 @@ class PlaceViewModel: NSObject {
     }
     
     // Get places data from API
-    func fetchPlaces(completion: @escaping () -> ()) {
-        Webservice.sharedInstance.loadSources(completion: { (place) in
-            print(place)
+    func fetchPlaces(completion: @escaping (Error?) -> ()) {
+        Webservice.sharedInstance.loadSources(completion: { place, error in
+            print(place as Any)
             self.place = place
-            self.rows = place.rows
-            completion()
+            self.rows = place?.rows
+            completion(error)
         })
     }
     

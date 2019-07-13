@@ -10,7 +10,9 @@ import Foundation
 
 let PlaceHolder_Image   =   "placeholder"
 let Refresh_Title       =   "Pull to refresh"
-
+let No_Error            =   "No Error"
+let Loading_Title       =   "Loading Places...."
+let No_Data     =   "No data available, Pull to refresh"
 //let JSON_Url          =   "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json"
 
 /*

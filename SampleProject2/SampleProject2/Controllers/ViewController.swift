@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     
     var placeVM = PlaceViewModel()
     
+    var saurString: String?
+    
     lazy var tableView : UITableView = {
         let t = UITableView()
         t.translatesAutoresizingMaskIntoConstraints = false
@@ -51,14 +53,12 @@ class ViewController: UIViewController {
     }
     
     private func getPlaces() {
-        let activityIndicator = ActivityIndicator.shared
-        activityIndicator.animateActivity(title: "Loading...", view: self.view, navigationItem: navigationItem)
-        
-        placeVM.fetchPlaces {
+        placeVM.fetchPlaces { (error) in
+            print(error?.localizedDescription ?? No_Error)
             DispatchQueue.main.async {
                 self.navigationItem.title = self.placeVM.setNaigationTitle()
                 self.tableView.reloadData()
-                activityIndicator.stopAnimating(navigationItem: self.navigationItem)
+                TableViewHelper.EmptyMessage(message: error?.localizedDescription ?? Loading_Title, table: self.tableView)
             }
         }
     }
@@ -66,14 +66,20 @@ class ViewController: UIViewController {
 
 extension ViewController {
     @objc func refreshPlaces(_ refreshControl: UIRefreshControl) {
-        tableView.endRefreshing(deadline: .now() + .seconds(3))
+        getPlaces()
+        tableView.endRefreshing(deadline: .now() + .seconds(2))
     }
 }
 
 // MARK: UITableViewDataSource
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return placeVM.numberOfItemInSection(section: section) 
+        if placeVM.numberOfItemInSection(section: section) > 0 {
+            return placeVM.numberOfItemInSection(section: section)
+        }else {
+            TableViewHelper.EmptyMessage(message: No_Data, table: tableView)
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -83,6 +89,7 @@ extension ViewController: UITableViewDataSource {
     }
     
     func configureCell(cell: PlaceCell, forRowIndexPath indexPath: IndexPath) {
+        cell.selectionStyle = .none
         cell.titleLabel.text = placeVM.titleForItemAtIndexPath(indexPath: indexPath)
         cell.descriptionLabel.text = placeVM.descriptionForItemAtIndexPath(indexPath: indexPath)
         placeVM.setImage(cell: cell, indexPath: indexPath)

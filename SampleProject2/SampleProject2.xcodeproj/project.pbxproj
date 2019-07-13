@@ -20,7 +20,7 @@
 		205E2C2C22D6823C00B39BCD /* PlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205E2C2B22D6823C00B39BCD /* PlaceViewModel.swift */; };
 		C289BBA522D736BD0069C920 /* UIScrollView+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C289BBA422D736BD0069C920 /* UIScrollView+ActivityIndicator.swift */; };
 		C289BBA822D74A380069C920 /* PlaceMock.json in Resources */ = {isa = PBXBuildFile; fileRef = C289BBA722D74A380069C920 /* PlaceMock.json */; };
-		C289BBAB22D755930069C920 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C289BBAA22D755930069C920 /* ActivityIndicator.swift */; };
+		C2B3E37022D99DFD001DD08F /* TableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B3E36F22D99DFD001DD08F /* TableViewHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +51,7 @@
 		2C8CCB16C8E38DEDE6307410 /* Pods-SampleProject2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProject2.release.xcconfig"; path = "Target Support Files/Pods-SampleProject2/Pods-SampleProject2.release.xcconfig"; sourceTree = "<group>"; };
 		C289BBA422D736BD0069C920 /* UIScrollView+ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+ActivityIndicator.swift"; sourceTree = "<group>"; };
 		C289BBA722D74A380069C920 /* PlaceMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PlaceMock.json; sourceTree = "<group>"; };
-		C289BBAA22D755930069C920 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		C2B3E36F22D99DFD001DD08F /* TableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHelper.swift; sourceTree = "<group>"; };
 		F6229B064CBF654F2F5BAD22 /* Pods_SampleProject2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleProject2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB03A3EF6415FA9FFA66BB1F /* Pods-SampleProject2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProject2.debug.xcconfig"; path = "Target Support Files/Pods-SampleProject2/Pods-SampleProject2.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,9 +156,9 @@
 		205E2C2722D680E100B39BCD /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				C289BBAA22D755930069C920 /* ActivityIndicator.swift */,
 				205E2C2822D680F100B39BCD /* Constants.swift */,
 				C289BBA422D736BD0069C920 /* UIScrollView+ActivityIndicator.swift */,
+				C2B3E36F22D99DFD001DD08F /* TableViewHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -353,11 +353,11 @@
 				205E2C0122D67F7800B39BCD /* ViewController.swift in Sources */,
 				205E2BFF22D67F7800B39BCD /* AppDelegate.swift in Sources */,
 				205E2C1F22D67FD700B39BCD /* PlaceCell.swift in Sources */,
+				C2B3E37022D99DFD001DD08F /* TableViewHelper.swift in Sources */,
 				205E2C2C22D6823C00B39BCD /* PlaceViewModel.swift in Sources */,
 				C289BBA522D736BD0069C920 /* UIScrollView+ActivityIndicator.swift in Sources */,
 				205E2C2622D6801100B39BCD /* Webservice.swift in Sources */,
 				205E2C2522D6801100B39BCD /* Place.swift in Sources */,
-				C289BBAB22D755930069C920 /* ActivityIndicator.swift in Sources */,
 				205E2C2922D680F100B39BCD /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
